@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <h4>Алексей написал {{ posts.count }} записей</h4>
+    {% for post in posts %}
+        <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.date }}</p>
+        <p>{{ post.text|truncatewords:25 }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>

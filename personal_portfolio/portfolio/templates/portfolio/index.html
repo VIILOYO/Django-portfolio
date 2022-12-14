@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
 </head>
 <body>
+<a href="{% static 'portfolio/resume.pdf' %}">Резюме</a>
+<br>
+<a href="{% url 'blog' %}">Блог</a>
+<h1>Моё портфолио</h1>
+
+<img src="{% static 'portfolio/images/1.png' %}" height="600" width="auto">
+
 {% for project in projects %}
     <h2>{{ project.title }}</h2>
     <p>{{ project.discription }}</p>
